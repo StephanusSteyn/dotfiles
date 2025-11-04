@@ -131,6 +131,7 @@ alias bbb_rapidpro="psql -h rapidpro.bbb.systems -p 5432 -U stephanus -d temba"
 export LDFLAGS="-L$(brew --prefix xz)/lib"
 export CPPFLAGS="-I$(brew --prefix xz)/include"
 export PKG_CONFIG_PATH="$(brew --prefix xz)/lib/pkgconfig"
+export PATH="$(brew --prefix)/bin:$PATH"
 
-# Initialize pyenv
+ #Initialize pyenv
 eval "$(pyenv init -)"
