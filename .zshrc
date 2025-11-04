@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -16,13 +13,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -121,7 +111,26 @@ eval "$(zoxide init zsh)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # # ---- Eza (better ls) -----
 
+# Eza
 alias lsa="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+
+# --- ASUER Databases ---
+alias asuer_rapidpro="psql -h rapidpro.asuer.systems -p 5432 -U stephanus -d temba"
+alias asuer_production_replica="psql -h replica-reporting.asuer.systems -p 5432 -U readonly -d asuer-prod"
+alias asuer_reporting="psql -h asuer-reporting.asuer.systems -p 5432 -U asuerds -d asuer-reporting"
+
+# --- BBB Databases ---
+alias bbb_reporting="psql -h bbb-postgres-reporting.bbb.systems -p 5432 -U bbbds -d postgres"
+alias bbb_production_replica="psql -h datagateway.bbb.systems -p 5436 -U reporting -d bbb-prod"
+alias bbb_rapidpro="psql -h rapidpro.bbb.systems -p 5432 -U stephanus -d temba"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Ensure pyenv and Python builds can find Homebrew dependencies
+export LDFLAGS="-L$(brew --prefix xz)/lib"
+export CPPFLAGS="-I$(brew --prefix xz)/include"
+export PKG_CONFIG_PATH="$(brew --prefix xz)/lib/pkgconfig"
+
+# Initialize pyenv
+eval "$(pyenv init -)"
