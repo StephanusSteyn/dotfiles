@@ -123,7 +123,7 @@ alias asuer_reporting="psql -h asuer-reporting.asuer.systems -p 5432 -U asuerds 
 alias bbb_reporting="psql -h bbb-postgres-reporting.bbb.systems -p 5432 -U bbbds -d postgres"
 alias bbb_production_replica="psql -h datagateway.bbb.systems -p 5436 -U reporting -d bbb-prod"
 alias bbb_rapidpro="psql -h rapidpro.bbb.systems -p 5432 -U stephanus -d temba"
-
+alias cpwd='pwd | pbcopy'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
