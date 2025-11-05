@@ -112,7 +112,7 @@ eval "$(zoxide init zsh)"
 # # ---- Eza (better ls) -----
 
 # Eza
-alias lsa="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias lsa="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions -a"
 
 # --- ASUER Databases ---
 alias asuer_rapidpro="psql -h rapidpro.asuer.systems -p 5432 -U stephanus -d temba"
