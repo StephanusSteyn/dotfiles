@@ -135,3 +135,7 @@ export PATH="$(brew --prefix)/bin:$PATH"
 
  #Initialize pyenv
 eval "$(pyenv init -)"
+
+# Java configuration for PySpark
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+export PATH="$JAVA_HOME/bin:$PATH"
