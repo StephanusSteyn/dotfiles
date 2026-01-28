@@ -139,3 +139,6 @@ eval "$(pyenv init -)"
 # Java configuration for PySpark
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 export PATH="$JAVA_HOME/bin:$PATH"
+
+# Add local bin to PATH for Cursor CLI
+export PATH="$HOME/.local/bin:$PATH"
