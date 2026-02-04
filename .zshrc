@@ -142,3 +142,11 @@ export PATH="$JAVA_HOME/bin:$PATH"
 
 # Add local bin to PATH for Cursor CLI
 export PATH="$HOME/.local/bin:$PATH"
+
+# Add home directory for airflow
+export AIRFLOW_HOME=/Users/stephanussteyn/Documents/repos/apache-airflow-demo/dags
+
+# Function to cd and automatically list directory
+cda() {
+  cd "$@" && lsa
+}
