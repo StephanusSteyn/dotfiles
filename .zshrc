@@ -137,14 +137,14 @@ export PATH="$(brew --prefix)/bin:$PATH"
 eval "$(pyenv init -)"
 
 # Java configuration for PySpark
-export JAVA_HOME=/opt/homebrew/opt/openjdk@17
-export PATH="$JAVA_HOME/bin:$PATH"
+# export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+# export PATH="$JAVA_HOME/bin:$PATH"
 
 # Add local bin to PATH for Cursor CLI
-export PATH="$HOME/.local/bin:$PATH"
+# export PATH="$HOME/.local/bin:$PATH"
 
 # Add home directory for airflow
-export AIRFLOW_HOME=/Users/stephanussteyn/Documents/repos/apache-airflow-demo/dags
+# export AIRFLOW_HOME=/Users/stephanussteyn/Documents/repos/apache-airflow-demo/dags
 
 # Function to cd and automatically list directory
 cda() {
