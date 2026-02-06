@@ -150,3 +150,6 @@ eval "$(pyenv init -)"
 cda() {
   cd "$@" && lsa
 }
+
+# Source local machine-specific configuration
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
